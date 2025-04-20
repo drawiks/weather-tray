@@ -1,0 +1,16 @@
+
+#speaker
+edge-tts==7.0.0
+pygame==2.6.1
+
+#request weather
+aiohttp==3.11.16
+
+#config
+environs==14.1.1
+
+#message toast
+plyer==2.1.0
+
+#logs
+loguru==0.7.3
