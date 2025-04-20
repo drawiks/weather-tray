@@ -3,20 +3,18 @@ import aiohttp
 from datetime import datetime
 from plyer import notification
 
-from core.utils.speaker import Speaker
-from core.utils.logger import LogManager
+from utils.speaker import Speaker
+from utils.logger import LogManager
 
-from config import API_KEY, CITY, LOG_PATH
-
-class WeatherAPI:
-    def __init__(self):
+class Weather:
+    def __init__(self, api_key: str, city: str, log_path:str):
         self.speaker = Speaker()
-        self.log = LogManager(log_path=LOG_PATH, level="DEBUG").get_logger()
+        self.log = LogManager(log_path=log_path, level="DEBUG").get_logger()
         
         self.BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
         self.params = {
-            "q": CITY,
-            "appid": API_KEY,
+            "q": city,
+            "appid": api_key,
             "units": "metric",
             "lang": "ru"
         }
