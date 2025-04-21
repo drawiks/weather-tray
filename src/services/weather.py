@@ -6,7 +6,7 @@ from plyer import notification
 from utils.speaker import Speaker
 from utils.logger import LogManager
 
-class Weather:
+class WeatherService:
     def __init__(self, api_key: str, city: str, log_path:str):
         self.speaker = Speaker()
         self.log = LogManager(log_path=log_path, level="DEBUG").get_logger()

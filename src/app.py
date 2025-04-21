@@ -1,13 +1,13 @@
 
 import asyncio
 
-from service.weather import Weather
+from services.weather import WeatherService
 
 from config import API_KEY, CITY, LOG_PATH
 
 class App:
     def __init__(self):
-        self.weather = Weather(api_key=API_KEY, city=CITY, log_path=LOG_PATH)
+        self.weather = WeatherService(api_key=API_KEY, city=CITY, log_path=LOG_PATH)
     
     async def main_loop(self, interval_seconds: int = 3600):
         while True:
